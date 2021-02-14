@@ -166,3 +166,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e291a54f949de114da0f6001036c84ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  allRoundData:
+  - pointsAddedForCorrectAnswer: 3
+    questions: []
+  - pointsAddedForCorrectAnswer: 3
+    questions: []
+  - pointsAddedForCorrectAnswer: 3
+    questions: []
+  - pointsAddedForCorrectAnswer: 3
+    questions: []
+  - pointsAddedForCorrectAnswer: 3
+    questions: []

@@ -14,4 +14,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Round.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Round 1.unity
+    guid: 4e27ba96872f2b74498fb52c586b203f
+  - enabled: 1
+    path: Assets/Scenes/Round 2.unity
+    guid: 60b96fb0cb6350946acbd93963ef6249
+  - enabled: 1
+    path: Assets/Scenes/Round 3.unity
+    guid: 99dd4f49981c51d418a9ed1b85241630
+  - enabled: 1
+    path: Assets/Scenes/Round 4.unity
+    guid: d9936d0bccb496947b7312a1c508d9e3
   m_configObjects: {}

@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 54293714}
   - component: {fileID: 54293713}
   m_Layer: 5
-  m_Name: NextButton
+  m_Name: EndQuizButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -207,7 +207,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 75913368}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
-        m_MethodName: GoToNextScenario
+        m_MethodName: ReturnToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -414,9 +414,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Next Szenario
-
-'
+  m_Text: "Quiz End \n"
 --- !u!222 &91327987
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -487,7 +485,7 @@ MonoBehaviour:
     m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 4
+    m_MinSize: 5
     m_MaxSize: 155
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -635,7 +633,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c62e1be6d8469a8479001382633c922a, type: 2}
+  - {fileID: 2100000, guid: 5e5768d609a27be42ab3dea6abb522ba, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

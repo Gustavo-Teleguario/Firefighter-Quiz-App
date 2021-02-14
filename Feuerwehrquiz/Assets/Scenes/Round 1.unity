@@ -487,7 +487,7 @@ MonoBehaviour:
     m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 4
+    m_MinSize: 5
     m_MaxSize: 155
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -635,7 +635,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c62e1be6d8469a8479001382633c922a, type: 2}
+  - {fileID: 2100000, guid: b2d5f796e6db1484796880f3566a0995, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
