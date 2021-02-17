@@ -7,10 +7,9 @@ public class ObjectPool : MonoBehaviour //Spwan our buttons Answers
     public GameObject prefab;
     private Stack<GameObject> inactiveInstances = new Stack<GameObject>();
 
-
     public GameObject GetObject()
     {
-        GameObject spawnedGameObject;
+         GameObject spawnedGameObject;
         if (inactiveInstances.Count > 0)
         {
             spawnedGameObject = inactiveInstances.Pop();

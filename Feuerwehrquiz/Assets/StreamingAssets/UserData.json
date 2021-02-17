@@ -1,0 +1,22 @@
+{
+    "Items": [
+      
+        {
+            "Score": 100,
+            "UserName": "culito"
+        },
+        {
+            "Score": 100,
+            "UserName": "Jose"
+        },
+        {
+            "Score": 200,
+            "UserName": "Pedro"
+        },
+        {
+            "Score": 200,
+            "UserName": "Maynor"
+        }
+       
+    ]
+}

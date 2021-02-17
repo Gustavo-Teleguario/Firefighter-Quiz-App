@@ -9,24 +9,30 @@ public class GameController : MonoBehaviour
     public Text questionText;
     public ObjectPool answerButtonObjectPool;
     public Transform answerButtonParent;
+    public Transform answerButtonParentTwo;
     public GameObject questionDisplay;
     public GameObject changeScenario;//roundEndDisplay 
-    public GameObject nextRoundDisplay;//Aca viene la siguente preguntas con sus respuestas;
+    public GameObject nextRoundDisplay;
 
 
     public Text currentQuestionNumber;
     public GameObject UIPanel;
-
+    //Sprites Answers
+    public Sprite imageBK_A;
+    public Sprite imageBK_B;
+    public Sprite imageBK_C;
+    public Sprite imageBK_D;
+    public Sprite imageBK_F;
     //This 2 variables need to be Deleted because we dont needet for the quiz
-   // public Text scoreDisplayText;
-   // public Text UserName;
+    // public Text scoreDisplayText;
+    // public Text UserName;
 
     //Data variables
     private DataController dataController;
     private RoundData currentRoundData;
     private QuestionData[] questionPool;
 
-    private bool isRoundActive;
+    // private bool isRoundActive;
     private int questionIndex;
     private int playerScore;
     private List<GameObject> answerButtonGameObjects = new List<GameObject>();
@@ -39,8 +45,6 @@ public class GameController : MonoBehaviour
         dataController = FindObjectOfType<DataController>();
         SetUpRound();
         playerScore = 0;
-   
-      //  UserName.GetComponent<Text>().text = "User: " + DataController.InputField.text;
     }
     public void SetUpRound()
     {
@@ -48,11 +52,11 @@ public class GameController : MonoBehaviour
         currentRoundData = dataController.GetCurrentRoundData();
         questionPool = currentRoundData.questions;
 
-       // playerScore = 0;
+        // playerScore = 0;
         questionIndex = 0;
         //ShowPlayerScore();
         ShowQuestion();
-        isRoundActive = true;
+        //  isRoundActive = true;
     }
     public void ShowPlayerScore()
     {
@@ -69,14 +73,52 @@ public class GameController : MonoBehaviour
         //current Cuestion Number
         NumberOfCuestion();
 
-
+        //REPAIR this ONE
         //Get all Answer prefabs 
         for (int i = 0; i < questionData.answers.Length; i++)
         {
             GameObject answerButton = answerButtonObjectPool.GetObject();
-            answerButtonGameObjects.Add(answerButton);
-            answerButton.transform.SetParent(answerButtonParent);
 
+            
+                if (questionData.answers[i].answerText == "A" && questionIndex == 0)
+                {
+                    answerButton.GetComponent<Image>().sprite = imageBK_A;
+                }
+
+                if (questionData.answers[i].answerText == "B" && questionIndex == 0)
+                {
+                    answerButton.GetComponent<Image>().sprite = imageBK_B;
+                }
+
+                if (questionData.answers[i].answerText == "C" && questionIndex == 0)
+                {
+                    answerButton.GetComponent<Image>().sprite = imageBK_C;
+                }
+
+                if (questionData.answers[i].answerText == "D" && questionIndex == 0)
+                {
+                    answerButton.GetComponent<Image>().sprite = imageBK_D;
+                }
+
+             /*   if (questionData.answers[i].answerText == "F" && questionIndex == 0)
+                {
+                    answerButton.GetComponent<Image>().sprite = imageBK_D;
+                }*/
+            
+            answerButtonGameObjects.Add(answerButton);
+
+
+            if (questionData.answers.Length != 4)
+            {
+                answerButton.transform.SetParent(answerButtonParent);
+            }
+            else
+            {
+                answerButton.transform.SetParent(answerButtonParentTwo);
+            }
+
+
+            //Imagen Setup
             AnswerPrefab answerPrefab = answerButton.GetComponent<AnswerPrefab>();
             answerPrefab.Setup(questionData.answers[i]);
         }
@@ -93,16 +135,13 @@ public class GameController : MonoBehaviour
 
     public void AnswerButtonClicked(bool isCorrect)
     {
-        //Este metodo es muy importante ya que lo necesitaremos para nuestro RangList
-        //Este Aumenta la puntuacion del jugador si la respuesta es correcta y actualiza la pantalla
         if (isCorrect)
         {
             playerScore += currentRoundData.pointsAddedForCorrectAnswer;
-            dataController.userData.Score = dataController.userData.Score + 1 ;
-           // scoreDisplayText.text = "Score: " + playerScore.ToString();
-          //  Debug.Log("CurrentScore: " + playerScore.ToString());
+            dataController.userData.Score = dataController.userData.Score + 1;
+            // scoreDisplayText.text = "Score: " + playerScore.ToString();
+            //  Debug.Log("CurrentScore: " + playerScore.ToString());
         }
-        //Si tenemos mas preguntas, muestre la siguiente pregunta de lo contrario finalice la ronda
         if (questionPool.Length > questionIndex + 1)
         {
             questionIndex++;
@@ -116,7 +155,7 @@ public class GameController : MonoBehaviour
     public void EndRound()
     {
         //Set Round an turn off the Display question and activate the Change Scenario Panel
-        isRoundActive = false;
+        // isRoundActive = false;
         dataController.SubmitNewPlayerScore(playerScore);
 
         questionDisplay.SetActive(false);
