@@ -350,6 +350,11 @@ MonoBehaviour:
   nextRoundDisplay: {fileID: 276940123}
   currentQuestionNumber: {fileID: 1342112444}
   UIPanel: {fileID: 65929139}
+  imageBK_A: {fileID: 0}
+  imageBK_B: {fileID: 0}
+  imageBK_C: {fileID: 0}
+  imageBK_D: {fileID: 0}
+  imageBK_F: {fileID: 0}
 --- !u!1 &91327984
 GameObject:
   m_ObjectHideFlags: 0
@@ -2313,7 +2318,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f678d2ce48be4e54395b8d6d130be5c0, type: 2}
+  - {fileID: 2100000, guid: b6666f088414f3f4195babdd7be6ffe1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
