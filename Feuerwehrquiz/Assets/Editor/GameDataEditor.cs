@@ -59,12 +59,6 @@ public class GameDataEditor : EditorWindow
 
     public void SaveGameData()
     {
-        /*  string filePath = Application.dataPath + gameDataProjectFilePath;
-          bool checkFolderExist = Directory.Exists(filePath);
-          if (checkFolderExist == false)
-          {
-              Directory.CreateDirectory(filePath);
-          }*/
         string filePath = Application.dataPath + gameDataProjectFilePath;
         string dataAsJson = JsonUtility.ToJson(gameData);
         File.WriteAllText(filePath,dataAsJson);

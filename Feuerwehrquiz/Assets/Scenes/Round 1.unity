@@ -346,6 +346,12 @@ MonoBehaviour:
   nextRoundDisplay: {fileID: 276940123}
   currentQuestionNumber: {fileID: 154158573}
   UIPanel: {fileID: 65929139}
+  imageBK_A: {fileID: 21300000, guid: 3eca64d54e751f84184301903cf140ab, type: 3}
+  imageBK_B: {fileID: 21300000, guid: c10847cda8b2a57449ce19a7a0693b39, type: 3}
+  imageBK_C: {fileID: 21300000, guid: 21c8b62c0044b004d92c0f155ff1adc7, type: 3}
+  imageBK_D: {fileID: 21300000, guid: 922a6d0822030ed4e9d34fb15307a921, type: 3}
+  imageBK_F: {fileID: 21300000, guid: 65969c39f2bb8964e8702d8a7b3021a8, type: 3}
+  spriteTest: {fileID: 0}
 --- !u!1 &91327984
 GameObject:
   m_ObjectHideFlags: 0
@@ -2365,9 +2371,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
+  m_Sprite: {fileID: 21300000, guid: 5c27fe6eb75098443a85ba311b8a5ede, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -2763,7 +2769,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '?'
+  m_Text: 
 --- !u!222 &2141197620
 CanvasRenderer:
   m_ObjectHideFlags: 0

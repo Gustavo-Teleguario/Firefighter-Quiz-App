@@ -23,6 +23,7 @@ public class GameController : MonoBehaviour
     public Sprite imageBK_C;
     public Sprite imageBK_D;
     public Sprite imageBK_F;
+    public Sprite spriteTest;
     //This 2 variables need to be Deleted because we dont needet for the quiz
     // public Text scoreDisplayText;
     // public Text UserName;
@@ -36,6 +37,7 @@ public class GameController : MonoBehaviour
     private int questionIndex;
     private int playerScore;
     private List<GameObject> answerButtonGameObjects = new List<GameObject>();
+    private List<GameObject> firstAnswersButtons = new List<GameObject>();
 
 
 
@@ -69,45 +71,56 @@ public class GameController : MonoBehaviour
         RemoveAnswerButtons();
         QuestionData questionData = questionPool[questionIndex];
         questionText.text = questionData.questionText;
-
-        //current Cuestion Number
         NumberOfCuestion();
 
-        //REPAIR this ONE
-        //Get all Answer prefabs 
         for (int i = 0; i < questionData.answers.Length; i++)
         {
             GameObject answerButton = answerButtonObjectPool.GetObject();
 
-            
-                if (questionData.answers[i].answerText == "A" && questionIndex == 0)
-                {
-                    answerButton.GetComponent<Image>().sprite = imageBK_A;
-                }
+            Debug.Log("index for " + questionData.answers.Length + " index I " + i + "question" + questionIndex);
+            //Debug.Log(questionData.answers[i].answerText);
+            if (questionData.answers[i].answerText == "A")
+            {
+                answerButton.GetComponent<Image>().sprite = imageBK_A;
+                Debug.Log(questionData.answers[i].answerText);
+            }
 
-                if (questionData.answers[i].answerText == "B" && questionIndex == 0)
-                {
-                    answerButton.GetComponent<Image>().sprite = imageBK_B;
-                }
+            if (questionData.answers[i].answerText == "B")
+            {
+                answerButton.GetComponent<Image>().sprite = imageBK_B;
+                Debug.Log(questionData.answers[i].answerText);
+            }
 
-                if (questionData.answers[i].answerText == "C" && questionIndex == 0)
-                {
-                    answerButton.GetComponent<Image>().sprite = imageBK_C;
-                }
+            if (questionData.answers[i].answerText == "C")
+            {
+                answerButton.GetComponent<Image>().sprite = imageBK_C;
+                Debug.Log(questionData.answers[i].answerText);
+            }
 
-                if (questionData.answers[i].answerText == "D" && questionIndex == 0)
-                {
-                    answerButton.GetComponent<Image>().sprite = imageBK_D;
-                }
+            if (questionData.answers[i].answerText == "D")
+            {
+                answerButton.GetComponent<Image>().sprite = imageBK_D;
+                Debug.Log(questionData.answers[i].answerText);
+            }
 
-             /*   if (questionData.answers[i].answerText == "F" && questionIndex == 0)
-                {
-                    answerButton.GetComponent<Image>().sprite = imageBK_D;
-                }*/
-            
+            if (questionData.answers[i].answerText == "F")
+            {
+                answerButton.GetComponent<Image>().sprite = imageBK_F;
+                Debug.Log(questionData.answers[i].answerText);
+            }
+
+            string answerText = questionData.answers[i].answerText;
+            //Round
+            if (answerText == "Schaum" || answerText == "CO_2 Löscher" || answerText == "Wasser" 
+                || answerText == "Sand" || answerText == "ABC-Löschpulver" || answerText == "Wasser (Sprühlstrahl)"
+                || answerText == "Fettebrand Löschmittel" || answerText == "Fettbrand Löschmittel" || answerText == "ABC Pulverlöscher"
+                || answerText == "C02_Löscher")
+            {
+                answerButton.GetComponent<Image>().sprite = spriteTest;
+                Debug.Log(questionData.answers[i].answerText);
+            }
+
             answerButtonGameObjects.Add(answerButton);
-
-
             if (questionData.answers.Length != 4)
             {
                 answerButton.transform.SetParent(answerButtonParent);
@@ -116,12 +129,12 @@ public class GameController : MonoBehaviour
             {
                 answerButton.transform.SetParent(answerButtonParentTwo);
             }
-
-
             //Imagen Setup
             AnswerPrefab answerPrefab = answerButton.GetComponent<AnswerPrefab>();
             answerPrefab.Setup(questionData.answers[i]);
+
         }
+
     }
     private void RemoveAnswerButtons()
     {
@@ -130,7 +143,6 @@ public class GameController : MonoBehaviour
             answerButtonObjectPool.ReturnObject(answerButtonGameObjects[0]);
             answerButtonGameObjects.RemoveAt(0);
         }
-
     }
 
     public void AnswerButtonClicked(bool isCorrect)
@@ -194,7 +206,7 @@ public class GameController : MonoBehaviour
     }
     private void Update()
     {
-        ShowPlayerScore();
+        // ShowPlayerScore();
     }
 
     public void NumberOfCuestion()

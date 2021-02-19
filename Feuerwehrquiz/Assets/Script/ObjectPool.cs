@@ -7,6 +7,7 @@ public class ObjectPool : MonoBehaviour //Spwan our buttons Answers
     public GameObject prefab;
     private Stack<GameObject> inactiveInstances = new Stack<GameObject>();
 
+
     public GameObject GetObject()
     {
          GameObject spawnedGameObject;
@@ -26,7 +27,6 @@ public class ObjectPool : MonoBehaviour //Spwan our buttons Answers
         spawnedGameObject.SetActive(true);
         return spawnedGameObject;
     }
-
     //Return an instance of the prefab to the pool (when unloading an object add unused object back to pool
     public void ReturnObject(GameObject toReturn)
     {
