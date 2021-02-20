@@ -70,26 +70,31 @@ public class GameController : MonoBehaviour
             if (questionData.answers[i].answerText == "A")
             {
                 answerButton.GetComponent<Image>().sprite = imageBK_A;
+                answerButton.GetComponentInChildren<Text>().color = Color.clear;
             }
 
             if (questionData.answers[i].answerText == "B")
             {
                 answerButton.GetComponent<Image>().sprite = imageBK_B;
+                answerButton.GetComponentInChildren<Text>().color = Color.clear;
             }
 
             if (questionData.answers[i].answerText == "C")
             {
                 answerButton.GetComponent<Image>().sprite = imageBK_C;
+                answerButton.GetComponentInChildren<Text>().color = Color.clear;
             }
 
             if (questionData.answers[i].answerText == "D")
             {
                 answerButton.GetComponent<Image>().sprite = imageBK_D;
+                answerButton.GetComponentInChildren<Text>().color = Color.clear;
             }
 
             if (questionData.answers[i].answerText == "F")
             {
                 answerButton.GetComponent<Image>().sprite = imageBK_F;
+                answerButton.GetComponentInChildren<Text>().color = Color.clear;
             }
 
             string answerText = questionData.answers[i].answerText;
@@ -100,6 +105,8 @@ public class GameController : MonoBehaviour
                 || answerText == "C02_Löscher")
             {
                 answerButton.GetComponent<Image>().sprite = spriteTest;
+                answerButton.GetComponentInChildren<Text>().color = Color.black;
+
             }
 
             answerButtonGameObjects.Add(answerButton);
