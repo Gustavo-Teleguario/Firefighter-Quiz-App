@@ -53,18 +53,9 @@ public class GameController : MonoBehaviour
 
         currentRoundData = dataController.GetCurrentRoundData();
         questionPool = currentRoundData.questions;
-
-        // playerScore = 0;
         questionIndex = 0;
-        //ShowPlayerScore();
         ShowQuestion();
-        //  isRoundActive = true;
-    }
-    public void ShowPlayerScore()
-    {
-        // scoreDisplayText.text = "Score: " + playerScore.ToString();
-        // Debug.Log("CurrentScore: "+playerScore.ToString());#
-        Debug.Log("CurrentScore: " + dataController.userData.Score);
+
     }
     public void ShowQuestion()
     {
@@ -76,48 +67,39 @@ public class GameController : MonoBehaviour
         for (int i = 0; i < questionData.answers.Length; i++)
         {
             GameObject answerButton = answerButtonObjectPool.GetObject();
-
-            Debug.Log("index for " + questionData.answers.Length + " index I " + i + "question" + questionIndex);
-            //Debug.Log(questionData.answers[i].answerText);
             if (questionData.answers[i].answerText == "A")
             {
                 answerButton.GetComponent<Image>().sprite = imageBK_A;
-                Debug.Log(questionData.answers[i].answerText);
             }
 
             if (questionData.answers[i].answerText == "B")
             {
                 answerButton.GetComponent<Image>().sprite = imageBK_B;
-                Debug.Log(questionData.answers[i].answerText);
             }
 
             if (questionData.answers[i].answerText == "C")
             {
                 answerButton.GetComponent<Image>().sprite = imageBK_C;
-                Debug.Log(questionData.answers[i].answerText);
             }
 
             if (questionData.answers[i].answerText == "D")
             {
                 answerButton.GetComponent<Image>().sprite = imageBK_D;
-                Debug.Log(questionData.answers[i].answerText);
             }
 
             if (questionData.answers[i].answerText == "F")
             {
                 answerButton.GetComponent<Image>().sprite = imageBK_F;
-                Debug.Log(questionData.answers[i].answerText);
             }
 
             string answerText = questionData.answers[i].answerText;
             //Round
-            if (answerText == "Schaum" || answerText == "CO_2 Löscher" || answerText == "Wasser" 
+            if (answerText == "Schaum" || answerText == "CO_2 Löscher" || answerText == "Wasser"
                 || answerText == "Sand" || answerText == "ABC-Löschpulver" || answerText == "Wasser (Sprühlstrahl)"
                 || answerText == "Fettebrand Löschmittel" || answerText == "Fettbrand Löschmittel" || answerText == "ABC Pulverlöscher"
                 || answerText == "C02_Löscher")
             {
                 answerButton.GetComponent<Image>().sprite = spriteTest;
-                Debug.Log(questionData.answers[i].answerText);
             }
 
             answerButtonGameObjects.Add(answerButton);
@@ -132,7 +114,6 @@ public class GameController : MonoBehaviour
             //Imagen Setup
             AnswerPrefab answerPrefab = answerButton.GetComponent<AnswerPrefab>();
             answerPrefab.Setup(questionData.answers[i]);
-
         }
 
     }
@@ -151,8 +132,6 @@ public class GameController : MonoBehaviour
         {
             playerScore += currentRoundData.pointsAddedForCorrectAnswer;
             dataController.userData.Score = dataController.userData.Score + 1;
-            // scoreDisplayText.text = "Score: " + playerScore.ToString();
-            //  Debug.Log("CurrentScore: " + playerScore.ToString());
         }
         if (questionPool.Length > questionIndex + 1)
         {
@@ -191,9 +170,7 @@ public class GameController : MonoBehaviour
         CheckRoundScenario();
         //Reset Variables for new Round
         SetUpRound();
-        //show again
-        //questionDisplay.SetActive(true);
-        // changeScenario.SetActive(false);
+
     }
 
     //Return to Star and Add User into List and Save

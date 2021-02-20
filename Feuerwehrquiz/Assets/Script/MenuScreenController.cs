@@ -1,8 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class MenuScreenController : MonoBehaviour
 {
@@ -20,15 +20,25 @@ public class MenuScreenController : MonoBehaviour
     //Text Prefabs for List
     public UserData[] listUsers;
 
+    public GameObject prefNumber;
     public GameObject prefabText;
     public GameObject prefabScore;
-    public GameObject prefNumber;
+   
 
     void Start()
     {
         DataController.InputField = this.InputField;
         this.listUsers = DataController.dataListArray;
+        SortMyArray(this.listUsers);
         showListPlayers();
+    }
+    public void SortMyArray(UserData[] listUsers)
+    {
+        if(listUsers.Length != 0)
+        {
+           Array.Sort(listUsers);
+        }
+       
     }
 
     public void StartPanelName()
@@ -72,16 +82,17 @@ public class MenuScreenController : MonoBehaviour
         if (this.listUsers != null)
         {
             for (int i = 0; i < listUsers.Length; i++)
-            {
+            { 
+                GameObject textNumber = Instantiate(prefNumber) as GameObject;
                 GameObject text = Instantiate(prefabText) as GameObject;
                 GameObject textScore = Instantiate(prefabScore) as GameObject;
-                GameObject textNumber = Instantiate(prefNumber) as GameObject;
+                textNumber.transform.SetParent(Container.transform, false);
                 text.transform.SetParent(Container.transform, false);
                 textScore.transform.SetParent(Container.transform, false);
-                textNumber.transform.SetParent(Container.transform, false);
+                textNumber.GetComponentInChildren<Text>().text = (i + 1).ToString();
                 text.GetComponentInChildren<Text>().text = listUsers[i].UserName;
                 textScore.GetComponentInChildren<Text>().text = listUsers[i].Score.ToString();
-                textNumber.GetComponentInChildren<Text>().text = i.ToString();//index del array
+               
             }
         }
     }

@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System;
 
 [System.Serializable]
-public class UserData
+public class UserData : IComparable<UserData>
 {
     //User Atributes
 
@@ -14,5 +12,11 @@ public class UserData
     {
         UserName = name;
         Score = score;
+    }
+
+    public int CompareTo(UserData other)
+    {
+        return other.Score.CompareTo(this.Score);
+      
     }
 }

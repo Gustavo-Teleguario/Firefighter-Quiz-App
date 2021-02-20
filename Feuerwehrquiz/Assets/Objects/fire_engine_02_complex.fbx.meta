@@ -1,0 +1,371 @@
+fileFormatVersion: 2
+guid: e6446d9a12e792f408303da39958a87e
+ModelImporter:
+  serializedVersion: 20101
+  internalIDToNameTable:
+  - first:
+      74: 8391621625288233742
+    second: interior light|3cx plateAction
+  - first:
+      74: -5456076255845587186
+    second: interior light|CameraAction
+  - first:
+      74: -6532744369523240676
+    second: interior light|Cube.005Action
+  - first:
+      74: -4660050880526460579
+    second: interior light|interior lightAction
+  - first:
+      74: -7499203879900717670
+    second: interior light|TextAction
+  - first:
+      74: -4541710971399874671
+    second: Camera|3cx plateAction
+  - first:
+      74: 8440248360967096626
+    second: Camera|CameraAction
+  - first:
+      74: 1927424788169941251
+    second: Camera|Cube.005Action
+  - first:
+      74: 2785014237367166976
+    second: Camera|interior lightAction
+  - first:
+      74: 4467129470280879134
+    second: Camera|TextAction
+  - first:
+      74: 4259238621669574279
+    second: cabin floor|3cx plateAction
+  - first:
+      74: -43585925153099994
+    second: cabin floor|CameraAction
+  - first:
+      74: -7645008212181855925
+    second: cabin floor|Cube.005Action
+  - first:
+      74: -7812661593063625677
+    second: cabin floor|interior lightAction
+  - first:
+      74: 3612693697127244735
+    second: cabin floor|TextAction
+  - first:
+      74: -2219105060720252715
+    second: 3cx plate|3cx plateAction
+  - first:
+      74: -4748567755402798991
+    second: 3cx plate|CameraAction
+  - first:
+      74: 6951766135676103186
+    second: 3cx plate|Cube.005Action
+  - first:
+      74: -4693665535320759484
+    second: 3cx plate|interior lightAction
+  - first:
+      74: 7143394237919585453
+    second: 3cx plate|TextAction
+  - first:
+      74: 3946524981012472114
+    second: Text|3cx plateAction
+  - first:
+      74: -3872560533192541715
+    second: Text|CameraAction
+  - first:
+      74: -3439158741435005772
+    second: Text|Cube.005Action
+  - first:
+      74: -8019824128559758382
+    second: Text|interior lightAction
+  - first:
+      74: -5016124314966640817
+    second: Text|TextAction
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Felga
+    second: {fileID: 2100000, guid: 98a907ccbf4e6964da619f6c1b9418a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Felga2
+    second: {fileID: 2100000, guid: c13efe2905c695d4f934a7dc40685212, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Guma opony
+    second: {fileID: 2100000, guid: d4cddf8d46c20504ba6a5e2df00b255c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "Lakier bia\u0142y"
+    second: {fileID: 2100000, guid: 835f1f9dd98b3854880c885702bc9371, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lakier czerwony
+    second: {fileID: 2100000, guid: a20235654e22eb445a6a961958d3aad8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: f260bc0dbb470aa47b670dae03551ca3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Migacze
+    second: {fileID: 2100000, guid: 59b6cbe9199b6c145a138ce6c5038fb7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 9dc5f0066d3932e499b138cbc60d32b8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blackhole
+    second: {fileID: 2100000, guid: 926b9c18b1741584ba740561eafefb85, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blue lamp
+    second: {fileID: 2100000, guid: 139450f0768c77847929246ac0fec3ed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chrome matte
+    second: {fileID: 2100000, guid: 4724fa6f68aed4b4aa20530f27935329, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chrome.001
+    second: {fileID: 2100000, guid: 0c4136996177d5e40bbbaba3e61fcb1b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chromy
+    second: {fileID: 2100000, guid: 31ff152dd3c3f474d998c961cafe4d9e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: control_panel
+    second: {fileID: 2100000, guid: 9ccbfc297d75faa409956cd69d69d308, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: czarny plastik
+    second: {fileID: 2100000, guid: 51092b378b18eed4c9543ab1ce30361a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dashboard
+    second: {fileID: 2100000, guid: 086b7a8946d8c464b887ed40e20e7b00, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gray metal
+    second: {fileID: 2100000, guid: ac21a65eb2fcd4245a1b80f75a8f37ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gray metal.001
+    second: {fileID: 2100000, guid: fdc0d19dd068c2047b879a73da41b8d3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grill
+    second: {fileID: 2100000, guid: c319b574f9a2e6640972e676a93d1ca0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "grill prz\xF3d"
+    second: {fileID: 2100000, guid: c6e75e276e2bf9a458417e25d235630e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: guma
+    second: {fileID: 2100000, guid: 24896cd4371885d49b5e4ed9af3c1986, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: guma uszczelki
+    second: {fileID: 2100000, guid: 3809a92fbe702be4eabfe9b218721950, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: insrtument cluster
+    second: {fileID: 2100000, guid: 2d2a5d9b0b7b06e4496c774b869f69ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: klosz
+    second: {fileID: 2100000, guid: 67004127834760b408b3442c85fd9811, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ladder
+    second: {fileID: 2100000, guid: 00e0095bd57037b46bf3575b1acb653e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "lakier wkl\u0119s\u0142y czerwony"
+    second: {fileID: 2100000, guid: 86bb41d7efabe6d40930966ec3d75895, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lampa
+    second: {fileID: 2100000, guid: 850188ce41c50df4e90f4f19d4447c7a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "materia\u0142 jutowy"
+    second: {fileID: 2100000, guid: e663f96efad097c499cd0d14fb4a512b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mirror body
+    second: {fileID: 2100000, guid: fe52421e51ed1834ead3dbeefb4d65b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mirror itself 1
+    second: {fileID: 2100000, guid: 3c6d9b999b5999e4dbfd895424bd2b11, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plastic interior
+    second: {fileID: 2100000, guid: 866f7ab475480a94096032a25af69e25, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plush interior
+    second: {fileID: 2100000, guid: e0aa66a1fcdf6ff489b8d63627819c61, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: red lamp
+    second: {fileID: 2100000, guid: d902c84ef9bf1ff4c8dc484d47581059, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: reg-plate
+    second: {fileID: 2100000, guid: e3624ec97c0d738498e1334f36ef39c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rigged_metal_plate
+    second: {fileID: 2100000, guid: cc582add73f59c546bb0c8a659a70530, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: seat
+    second: {fileID: 2100000, guid: 441c5b7eac4bd8f468914c670df3c923, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: szyba
+    second: {fileID: 2100000, guid: a50db078b5aa9b54585a63ed8f08b8ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u015Awiat\u0142a"
+    second: {fileID: 2100000, guid: b87c7ca186d105c42966b524b829913d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u017Caluzje"
+    second: {fileID: 2100000, guid: 6b48484d5eb85a449b1bdf2e04bab51a, type: 2}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class AnswerPrefab : MonoBehaviour
 {
-
     public Text answerText;
     private GameController gameController;
     private AnswerData answerData;
@@ -18,10 +17,8 @@ public class AnswerPrefab : MonoBehaviour
     public void Setup(AnswerData data)//pass in answer data and set up for display
     {
         answerData = data;
-        answerText.text = answerData.answerText;
-       
+        answerText.text = answerData.answerText;    
     }
-
    public void HandleClick()
     {
         gameController.AnswerButtonClicked(answerData.isCorrect);
