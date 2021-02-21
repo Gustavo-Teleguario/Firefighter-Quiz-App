@@ -4,7 +4,7 @@
 public class UserData : IComparable<UserData>
 {
     //User Atributes
-
+    public int Range;
     public int Score;
     public string UserName;
 
@@ -12,6 +12,7 @@ public class UserData : IComparable<UserData>
     {
         UserName = name;
         Score = score;
+        Range = 0;
     }
 
     public int CompareTo(UserData other)

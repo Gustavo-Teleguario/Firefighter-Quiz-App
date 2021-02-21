@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 using System.IO;
 using UnityEngine.Networking;
 using UnityEngine.UI;
+using System;
 using System.Collections.Generic;
 
 public class DataController : MonoBehaviour
@@ -43,10 +44,16 @@ public class DataController : MonoBehaviour
         else
         {
             dataListArray = dataList.ToArray();
+            Array.Sort(dataListArray);
+
+            //This loop referenz is for a Range Result at end from quiz.
+            for(int  j = 0; j  < dataListArray.Length; j++)
+            { 
+                dataListArray[j].Range = (j + 1);
+            }
         }
         SaveUserData(dataListArray);
     }
-
     public void Start()
     {
         DontDestroyOnLoad(gameObject);

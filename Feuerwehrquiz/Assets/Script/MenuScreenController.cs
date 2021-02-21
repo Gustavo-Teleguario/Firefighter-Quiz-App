@@ -2,7 +2,6 @@
 using System;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System.Collections.Generic;
 
 public class MenuScreenController : MonoBehaviour
 {
@@ -28,13 +27,13 @@ public class MenuScreenController : MonoBehaviour
     void Start()
     {
         DataController.InputField = this.InputField;
-        this.listUsers = DataController.dataListArray;
-        SortMyArray(this.listUsers);
+        listUsers = DataController.dataListArray;
+        SortMyArray(listUsers);
         showListPlayers();
     }
     public void SortMyArray(UserData[] listUsers)
     {
-        if(listUsers.Length != 0)
+        if(this.listUsers.Length != 0)
         {
            Array.Sort(listUsers);
         }

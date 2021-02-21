@@ -24,9 +24,9 @@ public class GameController : MonoBehaviour
     public Sprite imageBK_D;
     public Sprite imageBK_F;
     public Sprite spriteTest;
-    //This 2 variables need to be Deleted because we dont needet for the quiz
-    // public Text scoreDisplayText;
-    // public Text UserName;
+
+    //End display 
+    public Text correctAnswers;
 
     //Data variables
     private DataController dataController;
@@ -37,8 +37,6 @@ public class GameController : MonoBehaviour
     private int questionIndex;
     private int playerScore;
     private List<GameObject> answerButtonGameObjects = new List<GameObject>();
-    private List<GameObject> firstAnswersButtons = new List<GameObject>();
-
 
 
     // Start is called before the first frame update
@@ -47,10 +45,10 @@ public class GameController : MonoBehaviour
         dataController = FindObjectOfType<DataController>();
         SetUpRound();
         playerScore = 0;
+
     }
     public void SetUpRound()
     {
-
         currentRoundData = dataController.GetCurrentRoundData();
         questionPool = currentRoundData.questions;
         questionIndex = 0;
@@ -167,6 +165,7 @@ public class GameController : MonoBehaviour
         else
         {
             nextRoundDisplay.SetActive(false);
+            PlayerAddedIntoListData();
         }
     }
 
@@ -183,22 +182,39 @@ public class GameController : MonoBehaviour
     //Return to Star and Add User into List and Save
     public void ReturnToMenu()
     {
-        dataController.userData.UserName = DataController.InputField.text;
-        dataController.addToList(dataController.userData.UserName, dataController.userData.Score);
         dataController.ResetCurrentRound();
         SceneManager.LoadScene("MenuScreen");
     }
+
     private void Update()
     {
-        // ShowPlayerScore();
+        EndResult();
+    }
+
+    public void PlayerAddedIntoListData()
+    {
+        dataController.userData.UserName = DataController.InputField.text;
+        dataController.addToList(dataController.userData.UserName, dataController.userData.Score);
     }
 
     public void NumberOfCuestion()
     {
-
         //Questions number and points
         int numberOfCuestion = dataController.GetNumberOfCuestion() * 3;
         currentQuestionNumber.GetComponent<Text>().text = "Frage: " + dataController.userData.Score + " / " + numberOfCuestion.ToString();
+
+    }
+
+    //Show End Result
+    public void EndResult()
+    {
+        if (!dataController.HasMoreRounds())
+        {
+            int numberOfCuestion = dataController.GetNumberOfCuestion() * 3;
+            correctAnswers.GetComponent<Text>().text = "Sie haben " + dataController.userData.Score + " von " + numberOfCuestion
+                                                  + " Fragen richtig beantwortet. Sie belegen damit Platz "+ RangePlace()+ " auf der Rangliste";
+        }
+
     }
 
     //show Cuestion
@@ -236,5 +252,17 @@ public class GameController : MonoBehaviour
             SceneManager.LoadScene("Round 4");
         }
 
+    }
+    //Return the current range player
+    public int RangePlace()
+    {
+        for (int i = 0; i < DataController.dataListArray.Length; i++)
+        { 
+            if(dataController.userData.Score == DataController.dataListArray[i].Score)
+            {
+                return DataController.dataListArray[i].Range;
+            }
+        }
+        return 0;
     }
 }
