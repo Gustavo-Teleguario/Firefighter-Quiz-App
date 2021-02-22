@@ -100,7 +100,7 @@ public class GameController : MonoBehaviour
             if (answerText == "Schaum" || answerText == "CO_2 Löscher" || answerText == "Wasser"
                 || answerText == "Sand" || answerText == "ABC-Löschpulver" || answerText == "Wasser (Sprühlstrahl)"
                 || answerText == "Fettebrand Löschmittel" || answerText == "Fettbrand Löschmittel" || answerText == "ABC Pulverlöscher"
-                || answerText == "C02_Löscher")
+                || answerText == "C02_Löscher" || answerText == "Mittelschaum")
             {
                 answerButton.GetComponent<Image>().sprite = spriteTest;
                 answerButton.GetComponentInChildren<Text>().color = Color.black;
@@ -179,7 +179,7 @@ public class GameController : MonoBehaviour
 
     }
 
-    //Return to Star and Add User into List and Save
+    //Return to Star
     public void ReturnToMenu()
     {
         dataController.ResetCurrentRound();
@@ -191,6 +191,7 @@ public class GameController : MonoBehaviour
         EndResult();
     }
 
+    //Add current player into List and save it
     public void PlayerAddedIntoListData()
     {
         dataController.userData.UserName = DataController.InputField.text;
