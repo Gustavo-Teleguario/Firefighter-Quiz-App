@@ -12,7 +12,7 @@ public class DataController : MonoBehaviour
     private RoundData[] allRoundData;
     public static PlayerProgress playerProgress;
     private const string gameDataFileName = "data.json";
-
+    public List<ResultData> resultList = new List<ResultData>();
 
     //User Data
     public static Text InputField;
@@ -58,6 +58,8 @@ public class DataController : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
         LoadGameData();
+        /*****************/
+        copyRigthAnswers();
         LoadPlayerProgress();
         LoadUserData();
         SceneManager.LoadScene("MenuScreen");
@@ -76,7 +78,7 @@ public class DataController : MonoBehaviour
             if (obj != null)
             {
                 dataListArray = obj;
-                Debug.Log("dataList " + dataListArray.Length);
+              //  Debug.Log("dataList " + dataListArray.Length);
             }
             else
             {
@@ -108,7 +110,7 @@ public class DataController : MonoBehaviour
     public void Update()
     {
     }
-    public RoundData GetCurrentRoundData()//devuelve datos de la primera Ronda solo tenemos una ronda
+    public RoundData GetCurrentRoundData()
     {
         return allRoundData[playerProgress.currentRound];
     }
@@ -164,7 +166,7 @@ public class DataController : MonoBehaviour
 
     //Load Game Data
     public void LoadGameData()
-    { //No borrar esto es muy importante para el el APK
+    { 
         string filePath = Path.Combine(Application.streamingAssetsPath + "/", gameDataFileName);
         string dataAsJson;
         if (Application.platform == RuntimePlatform.Android)
@@ -186,4 +188,22 @@ public class DataController : MonoBehaviour
         return allRoundData.Length;
     }
 
+    public void copyRigthAnswers()
+    {
+        for(int i = 0; i < allRoundData.Length; i++)
+        {
+            for (int q = 0; q < allRoundData[i].questions.Length; q++)
+            {
+                for (int a = 0; a < allRoundData[i].questions[q].answers.Length; a++)
+                {
+                    if (allRoundData[i].questions[q].answers[a].isCorrect)
+                    {
+                        string question = allRoundData[i].questions[q].questionText;
+                        string answer = allRoundData[i].questions[q].answers[a].answerText;
+                        resultList.Add(new ResultData(question,answer));
+                    }
+                }
+            }
+        }  
+    }
 }

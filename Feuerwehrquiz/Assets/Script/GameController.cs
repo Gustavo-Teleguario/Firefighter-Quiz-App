@@ -138,6 +138,10 @@ public class GameController : MonoBehaviour
             playerScore += currentRoundData.pointsAddedForCorrectAnswer;
             dataController.userData.Score = dataController.userData.Score + 1;
         }
+        else
+        {
+            Debug.Log("Wrong answer pressed");
+        }
         if (questionPool.Length > questionIndex + 1)
         {
             questionIndex++;
@@ -151,9 +155,7 @@ public class GameController : MonoBehaviour
     public void EndRound()
     {
         //Set Round an turn off the Display question and activate the Change Scenario Panel
-        // isRoundActive = false;
         dataController.SubmitNewPlayerScore(playerScore);
-
         questionDisplay.SetActive(false);
         UIPanel.SetActive(false);
         changeScenario.SetActive(true);
@@ -166,6 +168,7 @@ public class GameController : MonoBehaviour
         {
             nextRoundDisplay.SetActive(false);
             PlayerAddedIntoListData();
+            ShowList();
         }
     }
 
@@ -213,7 +216,7 @@ public class GameController : MonoBehaviour
         {
             int numberOfCuestion = dataController.GetNumberOfCuestion() * 3;
             correctAnswers.GetComponent<Text>().text = "Sie haben " + dataController.userData.Score + " von " + numberOfCuestion
-                                                  + " Fragen richtig beantwortet. Sie belegen damit Platz "+ RangePlace()+ " auf der Rangliste";
+                                                  + " Fragen richtig beantwortet. Sie belegen damit Platz " + RangePlace() + " auf der Rangliste";
         }
 
     }
@@ -258,12 +261,20 @@ public class GameController : MonoBehaviour
     public int RangePlace()
     {
         for (int i = 0; i < DataController.dataListArray.Length; i++)
-        { 
-            if(dataController.userData.Score == DataController.dataListArray[i].Score)
+        {
+            if (dataController.userData.Score == DataController.dataListArray[i].Score)
             {
                 return DataController.dataListArray[i].Range;
             }
         }
         return 0;
+    }
+    //Show the Result Overview
+    public void ShowList()
+    {
+        foreach (ResultData el in dataController.resultList)
+        {
+            Debug.Log(el.questionText + "  " + el.answerText);
+        }
     }
 }

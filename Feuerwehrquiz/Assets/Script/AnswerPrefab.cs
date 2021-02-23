@@ -21,6 +21,6 @@ public class AnswerPrefab : MonoBehaviour
     }
    public void HandleClick()
     {
-        gameController.AnswerButtonClicked(answerData.isCorrect);
+        gameController.AnswerButtonClicked(answerData.isCorrect);   
     }
 }

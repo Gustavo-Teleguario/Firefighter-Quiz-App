@@ -6,7 +6,5 @@ using UnityEngine;
 public class QuestionData 
 {
     public string questionText;
-    public AnswerData[] answers; // List of our answer 
-   
-   
+    public AnswerData[] answers; // List of our answer   
 }
