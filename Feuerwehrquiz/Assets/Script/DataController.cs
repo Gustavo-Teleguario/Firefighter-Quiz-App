@@ -13,6 +13,7 @@ public class DataController : MonoBehaviour
     public static PlayerProgress playerProgress;
     private const string gameDataFileName = "data.json";
     public List<ResultData> resultList = new List<ResultData>();
+    public List<ResultData> userAnswers = new List<ResultData>();
 
     //User Data
     public static Text InputField;
@@ -200,7 +201,7 @@ public class DataController : MonoBehaviour
                     {
                         string question = allRoundData[i].questions[q].questionText;
                         string answer = allRoundData[i].questions[q].answers[a].answerText;
-                        resultList.Add(new ResultData(question,answer));
+                        resultList.Add(new ResultData(question,answer, " "));
                     }
                 }
             }

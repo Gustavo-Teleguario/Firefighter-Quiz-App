@@ -131,16 +131,17 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void AnswerButtonClicked(bool isCorrect)
+    public void AnswerButtonClicked(bool isCorrect, string answerText)
     {
         if (isCorrect)
         {
             playerScore += currentRoundData.pointsAddedForCorrectAnswer;
             dataController.userData.Score = dataController.userData.Score + 1;
+            dataController.userAnswers.Add(new ResultData(" ", " ", answerText));
         }
         else
         {
-            Debug.Log("Wrong answer pressed");
+            dataController.userAnswers.Add(new ResultData(" ", " ", answerText));
         }
         if (questionPool.Length > questionIndex + 1)
         {
@@ -186,6 +187,7 @@ public class GameController : MonoBehaviour
     public void ReturnToMenu()
     {
         dataController.ResetCurrentRound();
+        dataController.userAnswers.Clear();
         SceneManager.LoadScene("MenuScreen");
     }
 

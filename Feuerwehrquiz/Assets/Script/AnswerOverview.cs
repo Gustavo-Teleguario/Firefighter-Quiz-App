@@ -5,16 +5,25 @@ using UnityEngine.UI;
 
 public class AnswerOverview : MonoBehaviour
 {
-    public const int distance = 1800;
+
     private DataController dataController;
     public GameObject Container;
     public GameObject ContainerQuestion;
+    public GameObject ContainerUserAnswers;
     //answer list
     public List<ResultData> listAnswers;
+    public List<ResultData> userAnswers;
 
     //Prefabs
     public GameObject QuestionPrefab;
     public GameObject AnswerPrefab;
+    public GameObject UserAnswerPrefab;
+
+    //Help variables
+    int counter;
+    private const int questionDistance = 2800;
+    private const int answerDistance = 1990;
+    private const int userAnswerDistance = 1800;
 
 
     // Start is called before the first frame update
@@ -23,22 +32,24 @@ public class AnswerOverview : MonoBehaviour
         counter = 0;
         dataController = FindObjectOfType<DataController>();
         listAnswers = dataController.resultList;
+        userAnswers = dataController.userAnswers;
         ShowAllAnswers();
+        ShowUserAnswers();
     }
     void Update()
     {
 
     }
-    int counter;
     public void SwipedRight()
     {
         if (counter < 4)
         {
-            float x = Container.transform.position.x - distance;
+            float x = Container.transform.position.x - answerDistance;
             float y = Container.transform.position.y;
             float z = Container.transform.position.z;
             Container.transform.position = new Vector3(x, y, z);
-            SwipedQuestionsRight(distance);
+            SwipedQuestionsRight();
+            SwipeUserAnswersRight();
             counter++;
         }
     }
@@ -46,28 +57,42 @@ public class AnswerOverview : MonoBehaviour
     {
         if (counter != 0)
         {
-            float x = Container.transform.position.x + distance;
+            float x = Container.transform.position.x + answerDistance;
             float y = Container.transform.position.y;
             float z = Container.transform.position.z;
             Container.transform.position = new Vector3(x, y, z);
-            SwipedQuestionsLeft(distance);
+            SwipedQuestionsLeft();
+            SwipeUserAnswersLeft();
             counter--;
         }
-
     }
-    public void SwipedQuestionsRight(int value)
+    public void SwipedQuestionsRight()
     {
-        float x = ContainerQuestion.transform.position.x - value;
+        float x = ContainerQuestion.transform.position.x - questionDistance;
         float y = ContainerQuestion.transform.position.y;
         float z = ContainerQuestion.transform.position.z;
         ContainerQuestion.transform.position = new Vector3(x, y, z);
     }
-    public void SwipedQuestionsLeft(int value)
+    public void SwipedQuestionsLeft()
     {
-        float x = ContainerQuestion.transform.position.x + value;
+        float x = ContainerQuestion.transform.position.x + questionDistance;
         float y = ContainerQuestion.transform.position.y;
         float z = ContainerQuestion.transform.position.z;
         ContainerQuestion.transform.position = new Vector3(x, y, z);
+    }
+    public void SwipeUserAnswersRight()
+    {
+        float x = ContainerUserAnswers.transform.position.x - userAnswerDistance;
+        float y = ContainerUserAnswers.transform.position.y;
+        float z = ContainerUserAnswers.transform.position.z;
+        ContainerUserAnswers.transform.position = new Vector3(x, y, z);
+    }
+    public void SwipeUserAnswersLeft()
+    {
+        float x = ContainerUserAnswers.transform.position.x + userAnswerDistance;
+        float y = ContainerUserAnswers.transform.position.y;
+        float z = ContainerUserAnswers.transform.position.z;
+        ContainerUserAnswers.transform.position = new Vector3(x, y, z);
     }
 
     public void ShowAllAnswers()
@@ -91,5 +116,19 @@ public class AnswerOverview : MonoBehaviour
                 answer.GetComponentInChildren<Text>().text = el.answerText;
             }
         }
+    }
+    public void ShowUserAnswers()
+    {
+        if (userAnswers != null)
+        {
+            foreach (ResultData el in userAnswers)
+            {
+                // Debug.Log("Wrong " + el.answerText);
+                GameObject userAnswers = Instantiate(UserAnswerPrefab) as GameObject;
+                userAnswers.transform.SetParent(ContainerUserAnswers.transform, false);
+                userAnswers.GetComponentInChildren<Text>().text = el.userAnswer;
+            }
+        }
+
     }
 }
