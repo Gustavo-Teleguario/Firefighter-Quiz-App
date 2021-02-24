@@ -22,7 +22,7 @@ public class AnswerOverview : MonoBehaviour
     //Help variables
     int counter;
     private const int questionDistance = 2800;
-    private const int answerDistance = 1990;
+    private const int answerDistance = 2000;
     private const int userAnswerDistance = 1800;
 
 
