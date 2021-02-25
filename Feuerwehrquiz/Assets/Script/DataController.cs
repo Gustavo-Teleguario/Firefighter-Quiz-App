@@ -59,7 +59,6 @@ public class DataController : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
         LoadGameData();
-        /*****************/
         copyRigthAnswers();
         LoadPlayerProgress();
         LoadUserData();
@@ -79,7 +78,6 @@ public class DataController : MonoBehaviour
             if (obj != null)
             {
                 dataListArray = obj;
-              //  Debug.Log("dataList " + dataListArray.Length);
             }
             else
             {

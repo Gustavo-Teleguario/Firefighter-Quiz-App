@@ -36,10 +36,6 @@ public class AnswerOverview : MonoBehaviour
         ShowAllAnswers();
         ShowUserAnswers();
     }
-    void Update()
-    {
-
-    }
     public void SwipedRight()
     {
         if (counter < 4)
@@ -119,16 +115,26 @@ public class AnswerOverview : MonoBehaviour
     }
     public void ShowUserAnswers()
     {
-        if (userAnswers != null)
+        ResultData []answers = listAnswers.ToArray();
+        ResultData[] userAns = userAnswers.ToArray();
+        if(answers.Length != 0 && userAns.Length != 0)
         {
-            foreach (ResultData el in userAnswers)
+            for (int i = 0; i < answers.Length; i++)
             {
-                // Debug.Log("Wrong " + el.answerText);
                 GameObject userAnswers = Instantiate(UserAnswerPrefab) as GameObject;
                 userAnswers.transform.SetParent(ContainerUserAnswers.transform, false);
-                userAnswers.GetComponentInChildren<Text>().text = el.userAnswer;
+                if (answers[i].answerText == userAns[i].userAnswer)
+                {
+                    userAnswers.GetComponentInChildren<Text>().text = userAns[i].userAnswer;
+                    userAnswers.GetComponent<Image>().color = Color.green;
+                }
+                else
+                {
+                    userAnswers.GetComponentInChildren<Text>().text = userAns[i].userAnswer;
+                    userAnswers.GetComponent<Image>().color = Color.red;
+                }
             }
-        }
 
+        }
     }
 }

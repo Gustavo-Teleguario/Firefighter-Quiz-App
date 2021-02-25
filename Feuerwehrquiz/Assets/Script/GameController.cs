@@ -169,7 +169,6 @@ public class GameController : MonoBehaviour
         {
             nextRoundDisplay.SetActive(false);
             PlayerAddedIntoListData();
-            ShowList();
         }
     }
 
@@ -270,13 +269,5 @@ public class GameController : MonoBehaviour
             }
         }
         return 0;
-    }
-    //Show the Result Overview
-    public void ShowList()
-    {
-        foreach (ResultData el in dataController.resultList)
-        {
-            Debug.Log(el.questionText + "  " + el.answerText);
-        }
     }
 }
