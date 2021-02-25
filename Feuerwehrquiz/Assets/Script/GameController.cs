@@ -100,7 +100,7 @@ public class GameController : MonoBehaviour
             if (answerText == "Schaum" || answerText == "CO_2 Löscher" || answerText == "Wasser"
                 || answerText == "Sand" || answerText == "ABC-Löschpulver" || answerText == "Wasser (Sprühlstrahl)"
                 || answerText == "Fettebrand Löschmittel" || answerText == "Schwerschaum" || answerText == "ABC Pulverlöscher"
-                || answerText == "C02_Löscher" || answerText == "Mittelschaum")
+                || answerText == "CO2_Löscher" || answerText == "Mittelschaum")
             {
                 answerButton.GetComponent<Image>().sprite = spriteTest;
                 answerButton.GetComponentInChildren<Text>().color = Color.black;

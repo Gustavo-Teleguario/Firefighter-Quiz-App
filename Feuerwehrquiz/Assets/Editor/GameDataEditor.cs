@@ -56,7 +56,6 @@ public class GameDataEditor : EditorWindow
             gameData = new GameData();
         }
     }
-
     public void SaveGameData()
     {
         string filePath = Application.dataPath + gameDataProjectFilePath;
