@@ -14,6 +14,7 @@ public class DataController : MonoBehaviour
     private const string gameDataFileName = "data.json";
     public List<ResultData> resultList = new List<ResultData>();
     public List<ResultData> userAnswers = new List<ResultData>();
+    public int questionNumber;
 
     //User Data
     public static Text InputField;
@@ -62,6 +63,7 @@ public class DataController : MonoBehaviour
         copyRigthAnswers();
         LoadPlayerProgress();
         LoadUserData();
+        questionNumber = 0;
         SceneManager.LoadScene("MenuScreen");
 
     }
@@ -136,6 +138,7 @@ public class DataController : MonoBehaviour
     {
         playerProgress.currentRound = 0;
         userData.Score = 0;
+        questionNumber = 0;
         SaveCurrentRound();
     }
 

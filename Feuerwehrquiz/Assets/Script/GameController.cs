@@ -99,7 +99,7 @@ public class GameController : MonoBehaviour
             //Round
             if (answerText == "Schaum" || answerText == "CO_2 Löscher" || answerText == "Wasser"
                 || answerText == "Sand" || answerText == "ABC-Löschpulver" || answerText == "Wasser (Sprühlstrahl)"
-                || answerText == "Fettebrand Löschmittel" || answerText == "Schwerschaum" || answerText == "ABC Pulverlöscher"
+                || answerText == "Fettebrand Löschmittel" || answerText == "AFFF-Schaummittel" || answerText == "ABC Pulverlöscher"
                 || answerText == "CO2_Löscher" || answerText == "Mittelschaum")
             {
                 answerButton.GetComponent<Image>().sprite = spriteTest;
@@ -147,6 +147,7 @@ public class GameController : MonoBehaviour
         {
             questionIndex++;
             ShowQuestion();
+
         }
         else
         {
@@ -178,6 +179,7 @@ public class GameController : MonoBehaviour
         dataController.GetNextRound();
         CheckRoundScenario();
         //Reset Variables for new Round
+        dataController.questionNumber--;
         SetUpRound();
 
     }
@@ -206,7 +208,8 @@ public class GameController : MonoBehaviour
     {
         //Questions number and points
         int numberOfCuestion = dataController.GetNumberOfCuestion() * 3;
-        currentQuestionNumber.GetComponent<Text>().text = "Frage: " + dataController.userData.Score + " / " + numberOfCuestion.ToString();
+        dataController.questionNumber++;
+        currentQuestionNumber.GetComponent<Text>().text = "Frage: " + dataController.questionNumber + " / " + numberOfCuestion.ToString();
 
     }
 
