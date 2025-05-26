@@ -76,4 +76,4 @@ This method is ideal for quickly testing changes and debugging the app on your A
     * Launch the **Fire Department Quiz** app
 
 ---
-**Developed for professional firefighter education - Learning through immersive 3D training experience! 🚒**
+**Developed with ❤️ for our brave firefighters - Supporting those who risk their lives to protect others!**
