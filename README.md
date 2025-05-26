@@ -2,15 +2,18 @@
 
 ## About the App
 
-An innovative **Android Quiz App** for interactive fire safety training. Developed with **Unity** as a final project for "Immersive Worlds".
+An interactive **Android Quiz App** specifically designed for **fire department members** to test and deepen their knowledge of extinguishing agents and firefighting methods. All content is based on official fire safety guidelines from the Würzburg Fire Academy.
 
-### 🎯 Features
+**Target:** Knowledge assessment and training for firefighters on proper extinguishing agents and methods across all fire classes.
 
-- **5 realistic 3D fire scenarios** based on official fire classes (A-F)
-- **15 practical questions** about extinguishing agents and methods
-- **Interactive 3D environment** using Unity Assets
-- **Leaderboard** for competitive learning
-- **Offline functionality** with local data storage
+### 🎯 Key Features
+
+- **5 realistic 3D fire scenarios** with animated fire and smoke effects
+- **15 expert-level questions** based on official fire academy materials  
+- **Random scenario sequence** - users must identify fire classes independently
+- **Interactive 3D environment** built with Unity
+- **Comprehensive results analysis** with correct answer explanations
+- **Leaderboard system** for performance tracking
 
 ### 🎮 Gameplay Flow
 
@@ -22,23 +25,26 @@ An innovative **Android Quiz App** for interactive fire safety training. Develop
 
 ---
 
-## 📱 Download & Installation
+## 📱 Setup & Installation
 
 ### Requirements
 - Android device (Version 7.0 or higher)
+- Unity 2022.3 LTS or higher
 - At least 200 MB free storage space
 
-### Installation
-1. **Download APK** from [Repository/Download-Link]
-2. **Enable Unknown Sources** in Android settings
-3. **Open APK file** and confirm installation
-4. **Launch app** and complete your first quiz run
+### Building from Source
+1. **Clone the project** from the repository
+2. **Open in Unity** and navigate to Project Settings
+3. **Configure APK settings** for your target architecture:
+   - Set Target Architecture to ARM64 or ARM32 (depending on your device)
+   - Configure Android SDK/NDK paths
+4. **Build & Run** - Unity will generate an APK file automatically
+5. **Install on device** via USB debugging or transfer APK manually
+
+### Alternative: Unity Remote Testing
+- Install **Unity Remote** app on your Android device
+- Enable **USB Debug Mode** on your device
+- Connect via USB and test directly from Unity Editor
 
 ---
-
-### Performance Test
-- Smooth 3D rendering on various Android devices
-- Fast loading times between scenarios
-- Stable app without crashes
-
 **Developed for educational purposes - Learning through immersive 3D experience! 🚒**
