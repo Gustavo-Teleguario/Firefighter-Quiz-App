@@ -24,7 +24,7 @@ This method is ideal for quickly testing changes and debugging the app on your A
 
 1.  **Clone the Repository:**
     ```bash
-    git clone [https://github.com/YOUR_USERNAME/FireDepartmentQuiz.git](https://github.com/YOUR_USERNAME/FireDepartmentQuiz.git)
+    git clone https://github.com/YOUR_USERNAME/FireDepartmentQuiz.git
     cd FireDepartmentQuiz
     ```
     *Replace *`YOUR_USERNAME`* with your GitHub username.*
